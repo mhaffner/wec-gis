@@ -1,6 +1,9 @@
 library(GISTools)
 data(tornados)
 
+data.dir <- '/home/matt/git-repos/presentations/images/wec-gis'
+setwd(data.dir)
+
 # plot data to get an idea of what we're looking at
 plot(us_states2)
 plot(torn2, add = TRUE)
@@ -11,8 +14,11 @@ plot(wi)
 plot(torn2, add = TRUE)
 
 # spatial intersection (analogous to ArcGIS's clip function)
+png('wi-torn.png')
+par(mar=c(0,0,0,0))
 wi.torn <- gIntersection(wi, torn2)
 plot(wi) ; plot(wi.torn, add = TRUE)
+dev.off()
 
 # get tornadoes inside and within 25km of Wisconsin
 wi.buf <- gBuffer(wi, width = 25000)
