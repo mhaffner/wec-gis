@@ -43,11 +43,3 @@ as.character(us_states2$STATE_NAME[match(max(us.torn.count),us.torn.count)])
 us.torn.over.area <- poly.counts(torn2,us_states2)/us_states2$AREA
 hist(us.torn.over.area)
 as.character(us_states2$STATE_NAME[match(max(us.torn.over.area),us.torn.over.area)])
-
-# are tornadoes clustered, dispersed, or random?
-library(spatstat)
-wi.torn.ppp <- as.ppp(wi.torn)
-l <- Lest(wi.torn.ppp)
-
-nnd <- nndist.ppp(wi.torn)
-hist(nnd)

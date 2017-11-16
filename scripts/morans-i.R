@@ -1,7 +1,10 @@
+# Adapted from "An Introduction to R for Spatial Analysis and Mapping" by Chris
+# Brusdon and Lex Comber
+
 library(rgdal)
 library(spdep)
 
-data.dir <- '/home/matt/git-repos/wec-gis/data'
+data.dir <- './wec-gis/data'
 setwd(data.dir)
 wi.counties <- readOGR(dsn = data.dir, layer = 'wi-counties-with-data')
 
@@ -39,7 +42,7 @@ moran.iter.neigh(wi.counties$hail_evt, # variable
 # randomizations
 par(mfrow=c(3,2),mar=c(1,1,1,1)/2) # set up the plotting area
 real.data.i <- sample(1:6,1) # select a random value between 1 and 6
-shades <- auto.shading(wi.counties$hail_evt, n = 9, cols = brewer.pal(9, 'Purples')) # set up shades of colors
+shades <- auto.shading(wi.counties$hail_evt, n = 9, cols = brewer.pal(9, 'Reds')) # set up shades of colors
 
 for (i in 1:6) {
   if (i == real.data.i) {
