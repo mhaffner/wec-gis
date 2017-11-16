@@ -6,7 +6,7 @@ library(spdep)
 
 data.dir <- './wec-gis/data'
 setwd(data.dir)
-wi.counties <- readOGR(dsn = data.dir, layer = 'wi-counties-with-data')
+wi.counties <- readOGR(dsn = '.', layer = 'wi-counties-with-data')
 
 moran.iter.neigh <- function(var,coords,min.neigh,max.neigh,interval){
   moran.results <- data.frame(matrix(NA, nrow=length(seq(min.neigh,max.neigh,interval)),ncol=4)) # prepare dataframe

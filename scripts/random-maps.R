@@ -7,7 +7,7 @@ library(GISTools)
 
 data.dir <- './wec-gis/data'
 setwd(data.dir)
-wi.counties <- readOGR(dsn = data.dir, layer = 'wi-counties-with-data')
+wi.counties <- readOGR(dsn = '.', layer = 'wi-counties-with-data')
 
 plot.random.maps <- function(variable,colors) {
   # drawn six plots - one will contain the actual data, the other five will be
