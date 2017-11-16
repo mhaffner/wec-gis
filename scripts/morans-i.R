@@ -21,14 +21,31 @@ moran.iter.neigh <- function(var,coords,min.neigh,max.neigh,interval){
   return(moran.results)
 }
 
+# calculate Moran's I on tornadoes in Wisconsin counties
 moran.iter.neigh(wi.counties$torn_evt, # variable
                  coordinates(wi.counties), # county centroids
                  2, # number of neighbors to start with
                  16, # number of neighbors to end with
                  2) # increment of neighbors
 
+# calculate Moran's I on hail in Wisconsin counties
 moran.iter.neigh(wi.counties$hail_evt, # variable
                  coordinates(wi.counties), # county centroids
                  2, # number of neighbors to start with
                  16, # number of neighbors to end with
                  2) # increment of neighbors
+
+# drawn six plots - one will contain the actual data, the other five will be
+# randomizations
+par(mfrow=c(3,2),mar=c(1,1,1,1)/2) # set up the plotting area
+real.data.i <- sample(1:6,1) # select a random value between 1 and 6
+shades <- auto.shading(wi.counties$hail_evt, n = 9, cols = brewer.pal(9, 'Purples')) # set up shades of colors
+
+for (i in 1:6) {
+  if (i == real.data.i) {
+    choropleth(wi.counties, wi.counties$hail_evt, shades)
+  } else
+  {
+    choropleth(wi.counties, sample(wi.counties$hail_evt), shades)
+  }
+}
