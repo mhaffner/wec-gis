@@ -5,7 +5,6 @@ library(rgdal)
 library(spdep)
 
 data.dir <- './wec-gis/data'
-setwd(data.dir)
 wi.counties <- readOGR(dsn = '.', layer = 'wi-counties-with-data')
 
 moran.iter.neigh <- function(var,coords,min.neigh,max.neigh,interval){

@@ -6,7 +6,6 @@ library(spdep)
 library(GISTools)
 
 data.dir <- './wec-gis/data'
-setwd(data.dir)
 wi.counties <- readOGR(dsn = '.', layer = 'wi-counties-with-data')
 
 plot.random.maps <- function(variable,colors) {
@@ -36,7 +35,7 @@ plot.random.maps <- function(variable,colors) {
   return(real.data.i)
 }
 
-real.data <- plot.random.maps("Flood", "Greens")
+real.data <- plot.random.maps("Flood", "Purples")
 
 # Try different values for both function arguments
 # Variable 1:
