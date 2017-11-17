@@ -7,6 +7,7 @@ plot(torn2, add = TRUE)
 
 # subset states to get just Wisconsin
 wi <- us_states2[us_states2$STATE_NAME == 'Wisconsin',]
+
 plot(wi)
 plot(torn2, add = TRUE)
 
@@ -18,7 +19,7 @@ plot(wi) ; plot(wi.torn, add = TRUE)
 wi.buf <- gBuffer(wi, width = 25000)
 wi.buf.torn <- gIntersection(wi.buf, torn2)
 plot(wi.buf)
-plot(wi.plus.buf.torn, add = TRUE)
+plot(wi.buf.torn, add = TRUE)
 plot(wi, add = TRUE)
 
 # get tornadoes only between the buffer and Wisconsin

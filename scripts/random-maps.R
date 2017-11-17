@@ -5,7 +5,8 @@ library(rgdal)
 library(spdep)
 library(GISTools)
 
-data.dir <- './wec-gis/data'
+data.dir <- '/home/matt/git-repos/wec-gis/data'
+setwd(data.dir)
 wi.counties <- readOGR(dsn = '.', layer = 'wi-counties-with-data')
 
 plot.random.maps <- function(variable,colors) {
