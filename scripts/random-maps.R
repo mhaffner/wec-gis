@@ -5,9 +5,10 @@ library(rgdal)
 library(spdep)
 library(GISTools)
 
-data.dir <- '/home/matt/git-repos/wec-gis/data'
-setwd(data.dir)
-wi.counties <- readOGR(dsn = '.', layer = 'wi-counties-with-data')
+if (Sys.info()["nodename"] == "panopticon" | Sys.info()["nodename"] == "manjaro") {
+  setwd('/home/matt/git-repos/')
+}
+wi.counties <- readOGR(dsn = './wec-gis/data', layer = 'wi-counties-with-data')
 
 plot.random.maps <- function(variable,colors) {
   # drawn six plots - one will contain the actual data, the other five will be
