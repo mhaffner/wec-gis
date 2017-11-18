@@ -1,0 +1,17 @@
+#+LATEX_HEADER:\usepackage[utf8]{inputenc}
+#+LATEX_HEADER:\usepackage{charter}
+#+LATEX_HEADER:\linespread{2}
+#+LATEX_HEADER:\usepackage[margin=1.0in]{geometry}
+#+OPTIONS: ^:nil toc:nil enquote:t language:am
+
+* Visually Identifying Spatial Autocorrelation
+- Visit http://geo-haffner.com
+- Example login:
+  - Username:
+  - Password: wec-gis
+- Open the file "wec-gis/scripts/random-maps.R"
+- Use the "Run" button to execute each line individually
+- Once you reach the end of the file, maps should generate automatically
+- Type "real.data" in the console to see which map holds the actual data
+- Put the cursor on line 40 to run the code again
+- On line 40, replace "Flood" and "Purples" with other options
